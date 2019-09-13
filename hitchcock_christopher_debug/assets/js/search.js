@@ -32,24 +32,24 @@ actual error because no syntax or runtime exception has occurred
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
 	var resultsDIV = document.getElementById("results"),
-		searchInput = document.forms[0].search,
-		currentSearch = ''
+		searchInput = document.forms[0].search // removed comma since this is now the last item
+		//currentSearch = '' // commented out unused variable
 	;
 	
 	// Validates search query
-	var validqte = function(query)
+	var validqte = function(query) { // missing opening bracket
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){ 
+		while(query.charAt(0) == " "){ // fixed operator to check for equality instead of assign
 			query = query.substring(1, query.length);
 		};
-		while(query.charat(query.length-1) === ""){  
+		while(query.charAt(query.length-1) === ""){  // a was not capitalized in .charAt
 			query = query.substring(0, query.length-1);
-		;
+		}; // missing closing bracket - syntax III
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
-			alert("Your search query is too small, try again.); 
+			alert("Your search query is too small, try again."); // missing ending quote
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
@@ -60,26 +60,25 @@ actual error because no syntax or runtime exception has occurred
 	};
 	
 	// Finds search matches
-	var search = function(query)
+	var search = function(query) { // missing opening bracket
 		
 		// SPLIT the user's search query string into an array
-		var queryArray = query.join(" "); 
+		var queryArray = query.split(" "); // switched join to split
 		
 		// array to store matched results from database.js
-		var results = [];
-
+		var results = []; 
 		// loop through each index of db array
 		for(var i=0, j=db.length; i<j; i++){
 		
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
 			var dbTitleEnd = db[i].indexOf('|');
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+			var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd); // fixed camel casing on tolowercase 
 			
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
 			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
-				var qitem = queryArray[ii].tolowercase(); 
+				var qitem = queryArray[ii].toLowerCase();  // fixed camel casing on tolowercase
 				
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
@@ -87,17 +86,18 @@ actual error because no syntax or runtime exception has occurred
 				if(compare !== -1){
 					results.push(db[i]);
 				};
-			; 
-		;
+			}; // missing closing bracket
+		}; // missing closing bracket
 		
 		results.sort();
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){ 
+		if(results.length == 0){ // fixed operator to check equality instead of assign value 
 			noMatch();
 		}else{
 			showMatches(results);
 		};
+		console.log(results);
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
@@ -124,7 +124,7 @@ actual error because no syntax or runtime exception has occurred
 			// title of video ends with pipe
 			// pull the title's string using index numbers
 			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd);
+			title = results[i].substring(0, titleEnd); // substring should be all lowercase
 			
 			// pull the video url after the title
 			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
@@ -143,7 +143,7 @@ actual error because no syntax or runtime exception has occurred
  
         // THE LINE DIRECTLY BELOW IS CORRECT
 		return false;
-	;
+	}; // missing closing bracket
 	
 //THE LINE BELOW IS CORRECT. It is the close of the self executing function.
 })();
