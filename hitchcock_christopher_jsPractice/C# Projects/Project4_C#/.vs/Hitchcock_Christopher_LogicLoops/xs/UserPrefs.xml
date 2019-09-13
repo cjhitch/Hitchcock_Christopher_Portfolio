@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{5C404F36-2A37-4C1D-8BED-33BBB1F2E3FD}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hitchcock_Christopher_LogicLoops/Program.cs">
+    <Files>
+      <File FileName="Hitchcock_Christopher_LogicLoops/Program.cs" Line="40" Column="50" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Hitchcock_Christopher_LogicLoops" expanded="True">
+            <Node name="Hitchcock_Christopher_LogicLoops" expanded="True">
+              <Node name="Properties" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Hitchcock__Christopher__LogicLoops PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

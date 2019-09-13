@@ -1,0 +1,6 @@
+/Users/chitchcock/Projects/CustomClass/CustomClass/bin/Debug/CustomClass.exe
+/Users/chitchcock/Projects/CustomClass/CustomClass/bin/Debug/CustomClass.pdb
+/Users/chitchcock/Projects/CustomClass/CustomClass/obj/x86/Debug/CustomClass.csprojAssemblyReference.cache
+/Users/chitchcock/Projects/CustomClass/CustomClass/obj/x86/Debug/CustomClass.csproj.CoreCompileInputs.cache
+/Users/chitchcock/Projects/CustomClass/CustomClass/obj/x86/Debug/CustomClass.exe
+/Users/chitchcock/Projects/CustomClass/CustomClass/obj/x86/Debug/CustomClass.pdb
