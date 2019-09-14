@@ -1,0 +1,6 @@
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 2/Hitchcock_Christopher_CoffeeRun/Hitchcock_Christopher_CoffeeRun/bin/Debug/Hitchcock_Christopher_CoffeeRun.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 2/Hitchcock_Christopher_CoffeeRun/Hitchcock_Christopher_CoffeeRun/bin/Debug/Hitchcock_Christopher_CoffeeRun.pdb
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 2/Hitchcock_Christopher_CoffeeRun/Hitchcock_Christopher_CoffeeRun/obj/x86/Debug/Hitchcock_Christopher_CoffeeRun.csprojAssemblyReference.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 2/Hitchcock_Christopher_CoffeeRun/Hitchcock_Christopher_CoffeeRun/obj/x86/Debug/Hitchcock_Christopher_CoffeeRun.csproj.CoreCompileInputs.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 2/Hitchcock_Christopher_CoffeeRun/Hitchcock_Christopher_CoffeeRun/obj/x86/Debug/Hitchcock_Christopher_CoffeeRun.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 2/Hitchcock_Christopher_CoffeeRun/Hitchcock_Christopher_CoffeeRun/obj/x86/Debug/Hitchcock_Christopher_CoffeeRun.pdb

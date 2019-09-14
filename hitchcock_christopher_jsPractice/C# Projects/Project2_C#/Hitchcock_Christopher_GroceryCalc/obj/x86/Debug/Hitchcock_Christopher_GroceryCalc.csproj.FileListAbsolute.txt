@@ -1,0 +1,6 @@
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/bin/Debug/Hitchcock_Christopher_GroceryCalc.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/bin/Debug/Hitchcock_Christopher_GroceryCalc.pdb
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.csprojAssemblyReference.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.csproj.CoreCompileInputs.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.pdb

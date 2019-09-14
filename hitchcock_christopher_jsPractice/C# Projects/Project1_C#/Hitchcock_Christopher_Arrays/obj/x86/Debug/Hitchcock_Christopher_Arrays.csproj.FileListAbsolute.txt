@@ -1,0 +1,18 @@
+/Users/Chris/Projects/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/bin/Debug/Hitchcock_Christopher_Arrays.exe
+/Users/Chris/Projects/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/bin/Debug/Hitchcock_Christopher_Arrays.pdb
+/Users/Chris/Projects/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.csprojAssemblyReference.cache
+/Users/Chris/Projects/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.csproj.CoreCompileInputs.cache
+/Users/Chris/Projects/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.exe
+/Users/Chris/Projects/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.pdb
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/bin/Debug/Hitchcock_Christopher_Arrays.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/bin/Debug/Hitchcock_Christopher_Arrays.pdb
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.csprojAssemblyReference.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.csproj.CoreCompileInputs.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_Arrays/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.pdb
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project1_C#/Hitchcock_Christopher_Arrays/bin/Debug/Hitchcock_Christopher_Arrays.exe
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project1_C#/Hitchcock_Christopher_Arrays/bin/Debug/Hitchcock_Christopher_Arrays.pdb
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project1_C#/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.csprojAssemblyReference.cache
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project1_C#/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.csproj.CoreCompileInputs.cache
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project1_C#/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.exe
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project1_C#/Hitchcock_Christopher_Arrays/obj/x86/Debug/Hitchcock_Christopher_Arrays.pdb

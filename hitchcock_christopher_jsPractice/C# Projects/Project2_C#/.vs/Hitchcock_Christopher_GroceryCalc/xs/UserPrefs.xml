@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{BDFCD1FC-4E78-44A6-A027-4AD3D2D336AC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hitchcock_Christopher_GroceryCalc/Program.cs">
+    <Files>
+      <File FileName="Hitchcock_Christopher_GroceryCalc/Program.cs" Line="91" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Hitchcock_Christopher_GroceryCalc" expanded="True">
+            <Node name="Hitchcock_Christopher_GroceryCalc" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Hitchcock__Christopher__GroceryCalc PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

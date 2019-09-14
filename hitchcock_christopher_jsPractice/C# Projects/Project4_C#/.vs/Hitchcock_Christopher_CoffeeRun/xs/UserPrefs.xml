@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{5BC4BD05-0FBD-4F7B-84E0-DFE4E035A2D4}|Default">
+  <MonoDevelop.Ide.ItemProperties.Hitchcock__Christopher__CoffeeRun PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hitchcock_Christopher_CoffeeRun/Program.cs">
+    <Files>
+      <File FileName="Hitchcock_Christopher_CoffeeRun/Program.cs" Line="15" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Hitchcock_Christopher_CoffeeRun" expanded="True">
+            <Node name="Hitchcock_Christopher_CoffeeRun" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
