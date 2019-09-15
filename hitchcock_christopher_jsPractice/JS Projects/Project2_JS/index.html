@@ -10,12 +10,218 @@
 </head>
 <body>
 
-    <article class="row text-center">
-        <section class="col-sm-12 my-3">
-            <h1>
-               Arrays details are all printed in the console.
-            </h1>
+    <article class="container text-center">
+        <div class="row">
+            <section class="col-sm-12 my-3">
+                <h1>
+                    Grocery Calculator
+                </h1>
+            </section>
+        </div>
+        <div class="row my-3">
+            <section class="col-sm-4 text-right">
+                <h4>
+                    Enter Your Name: 
+                </h4>
+            </section>
+            <section class="col-sm-4">
+                <input class="name" type="text" />
+            </section>
+            <section class="col-sm-4 text-left">
+                <button>Submit</button>
+            </section>
+        </div>
+        <div class="row my-3">
+            <section class="col-sm-12 nameDisplay">
+                <h3></h3>
+            </section>
+        </div>
+        <div class="row my-3 foodSection d-none">
+
+<!-- Price Section 1 -->
+
+            <section class="col-sm-4">
+                <h3 class="mb-4">
+                    Apples
+                </h3>
+
+        <!-- Name and Price -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Price: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="" type="text" />
+                    </div>
+                </div>
+                <hr>
+
+        <!-- Quantity -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Quantity: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="" type="text" />
+                    </div>
+                </div>
+                <hr>
+
+        <!-- Total -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Total: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="total text-left"></p>
+                    </div>
+                </div>
+
+            </section>
+
+<!-- End First Section -->
+<!-- Price Section 2 -->
+
+            <section class="col-sm-4">
+                <h3 class="mb-4">
+                    Ice Cream
+                </h3>
+
+<!-- Name and Price -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Price: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="" type="text" />
+                    </div>
+                </div>
+                <hr>
+
+<!-- Quantity -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Quantity: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="" type="text" />
+                    </div>
+                </div>
+                <hr>
+
+<!-- Total -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Total: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="total text-left"></p>
+                    </div>
+                </div>
+
+            </section>
+
+<!-- End Second Section -->
+<!-- Price Section 3 -->
+
+        <section class="col-sm-4">
+                <h3 class="mb-4">
+                    Steak
+                </h3>
+
+<!-- Name and Price -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Price: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="" type="text" />
+                    </div>
+                </div>
+                <hr>
+
+<!-- Quantity -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Quantity: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <input class="" type="text" />
+                    </div>
+                </div>
+                <hr>
+
+<!-- Total -->
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5>
+                            Total: 
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="total text-left"></p>
+                    </div>
+                </div>
+
+            </section>
+
+<!-- End Third Section -->
+
+        </div>
+
+<!-- End Food Section -->
+
+<!-- Tax Section -->
+
+        <section class="totalArea d-none text-left my-5 row">
+            <hr class="w-100">
+            <div class="col-sm-2">
+                <h5>SubTotal: </h5>
+            </div>
+            <div class="col-sm-10">
+                <h5 class="displaySub"></h5>
+            </div>
+            <hr class="w-100">
+            <div class="col-sm-2">
+                <h5>Tax: </h5>
+            </div>
+            <div class="col-sm-10">
+                <h5 class="displayTax"></h5>
+            </div>
+            <hr class="w-100">
+            <div class="col-sm-2">
+                <h5>Total: </h5>
+            </div>
+            <div class="col-sm-10">
+                <h5 class="displayTotal"></h5>
+            </div>
         </section>
+
     </article>
 
     <script src="assets/js/script.js"></script>

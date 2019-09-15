@@ -4,3 +4,9 @@
 /Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.csproj.CoreCompileInputs.cache
 /Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.exe
 /Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_GroceryCalc/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.pdb
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project2_C#/Hitchcock_Christopher_GroceryCalc/bin/Debug/Hitchcock_Christopher_GroceryCalc.exe
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project2_C#/Hitchcock_Christopher_GroceryCalc/bin/Debug/Hitchcock_Christopher_GroceryCalc.pdb
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project2_C#/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.csprojAssemblyReference.cache
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project2_C#/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.csproj.CoreCompileInputs.cache
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project2_C#/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.exe
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project2_C#/Hitchcock_Christopher_GroceryCalc/obj/x86/Debug/Hitchcock_Christopher_GroceryCalc.pdb
