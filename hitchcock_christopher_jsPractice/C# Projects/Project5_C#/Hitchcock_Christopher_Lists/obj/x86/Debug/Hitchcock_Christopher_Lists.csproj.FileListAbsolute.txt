@@ -1,0 +1,6 @@
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 3/Hitchcock_Christopher_Lists/Hitchcock_Christopher_Lists/bin/Debug/Hitchcock_Christopher_Lists.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 3/Hitchcock_Christopher_Lists/Hitchcock_Christopher_Lists/bin/Debug/Hitchcock_Christopher_Lists.pdb
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 3/Hitchcock_Christopher_Lists/Hitchcock_Christopher_Lists/obj/x86/Debug/Hitchcock_Christopher_Lists.csprojAssemblyReference.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 3/Hitchcock_Christopher_Lists/Hitchcock_Christopher_Lists/obj/x86/Debug/Hitchcock_Christopher_Lists.csproj.CoreCompileInputs.cache
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 3/Hitchcock_Christopher_Lists/Hitchcock_Christopher_Lists/obj/x86/Debug/Hitchcock_Christopher_Lists.exe
+/Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 3/Hitchcock_Christopher_Lists/Hitchcock_Christopher_Lists/obj/x86/Debug/Hitchcock_Christopher_Lists.pdb

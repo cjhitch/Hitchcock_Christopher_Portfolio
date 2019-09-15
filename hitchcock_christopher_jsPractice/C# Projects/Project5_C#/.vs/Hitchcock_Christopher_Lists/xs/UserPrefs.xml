@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{5E50B944-29DF-4E62-ADF2-0302B38482F5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Hitchcock_Christopher_Lists/Program.cs">
+    <Files>
+      <File FileName="Hitchcock_Christopher_Lists/Program.cs" Line="11" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Hitchcock_Christopher_Lists" expanded="True">
+            <Node name="Hitchcock_Christopher_Lists" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Hitchcock__Christopher__Lists PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,44 +1,29 @@
 (function(){
 
-    // variables for the program
-    let firstArray = [34, 20, 91, 49];
-    let secondArray = [42, 120.30, 210.20, 32.50];
-    var sumArrayOne = 0;
-    var sumArrayTwo = 0;
-    let newCombinedArray = [];
+    let itemPrices = [1.25, 2.56, 5.67, 4, 8.25, 2.99, 9.99];
+    let revampedItemPrices = [];
+    let itemTotal = 0;
 
-    // sum of arrays
-    firstArray.forEach(element => {
-        sumArrayOne += element;
-    });
-    // write out to the console
-    console.log("Sum of Array One: ",sumArrayOne,"\r\nArray One's Length: ", firstArray.length);
+    addUpCosts(itemPrices);
 
-    // sum of second array
-    secondArray.forEach(element =>{
-        sumArrayTwo += element;
-    });
-    // write to console
-    console.log("\nSum of Array Two: ", sumArrayTwo,"\r\nArray Two's Length: ", secondArray.length);
+    console.log(`Welcome to the Grocery List Calculator\nUsing your previously submitted values, we have calculated your grocery list total\nThe sum of the prices in the list is \$${parseFloat(itemTotal).toFixed(2)}`)
 
-    // get avg and print to console of both arrays
-    let arrayOneAvg = sumArrayOne / firstArray.length;
-    console.log("\nAverage of Array One: ", arrayOneAvg);
+    console.log(`\nUh oh, looks like we have to cancel ont item, and replace another item with a different one, we will re-total your grocery list.`)
+    
+    revampedItemPrices = itemPrices;
+    revampedItemPrices.length = 6;
+    revampedItemPrices.splice(2,1);
+    revampedItemPrices.unshift(6.78);
 
-    let arrayTwoAvg = sumArrayTwo / secondArray.length;
-    console.log("\nAverage of Array Two: ", arrayTwoAvg,"\n");
+    addUpCosts(revampedItemPrices);
 
-    // combine arrays into one array
-    for (let i = 0; i < firstArray.length; i++) {
-        newCombinedArray[i] = firstArray[i] + secondArray[i];
-        console.log(`New Combined Array Value at Index ${i}: `,newCombinedArray[i]);
+    console.log(`\nThe sum of the prices in the list is \$${parseFloat(itemTotal).toFixed(2)}`)
+    
+    function addUpCosts(array) {
+        itemTotal = 0;
+        for (let i = 0; i < array.length; i++) {            
+            itemTotal += itemPrices[i];
+        }
     }
-
-    // mixed up string array
-    let  mixedUp = ["universe is winning.", "erse trying to produce bigger an", "between software engineers striving to build bigger ", "d better idiots. So far, the ", "Programming today is a race ", "and better idiot-proof programs, and the univ"];
-
-    // fixed string array and print to console
-    let fixedSentence =  mixedUp[4] + mixedUp[2] + mixedUp[5] + mixedUp[1] + mixedUp[3] + mixedUp[0];
-    console.log("\n",fixedSentence);
 
 })();
