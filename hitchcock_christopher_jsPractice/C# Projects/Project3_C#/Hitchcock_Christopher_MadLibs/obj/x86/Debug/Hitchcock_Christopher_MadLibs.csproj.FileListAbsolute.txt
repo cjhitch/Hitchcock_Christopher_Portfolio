@@ -4,3 +4,9 @@
 /Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_MadLibs/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.csproj.CoreCompileInputs.cache
 /Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_MadLibs/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.exe
 /Users/Chris/OneDrive - Full Sail University/Month 4 - SDI/Week 1/Hitchcock_Christopher_MadLibs/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.pdb
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project3_C#/Hitchcock_Christopher_MadLibs/bin/Debug/Hitchcock_Christopher_MadLibs.exe
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project3_C#/Hitchcock_Christopher_MadLibs/bin/Debug/Hitchcock_Christopher_MadLibs.pdb
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project3_C#/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.csprojAssemblyReference.cache
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project3_C#/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.csproj.CoreCompileInputs.cache
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project3_C#/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.exe
+/Users/chitchcock/Projects/Hitchcock_Christopher_Portfolio/hitchcock_christopher_jsPractice/C# Projects/Project3_C#/Hitchcock_Christopher_MadLibs/obj/x86/Debug/Hitchcock_Christopher_MadLibs.pdb

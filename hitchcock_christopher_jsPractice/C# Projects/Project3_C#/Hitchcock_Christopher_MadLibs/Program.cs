@@ -37,7 +37,7 @@ namespace Hitchcock_Christopher_MadLibs
             //Console.WriteLine(nameResp);
 
             //Ask for adjective and store in variable
-            Console.WriteLine("Please enter an adjective and press enter (this is decribing your animal)");
+            Console.WriteLine("Please enter an adjective and press enter (this is describing your animal)");
             string adjResp = Console.ReadLine();
             //Capitalizing the adjective to be used when a title
             string adjRespCap = char.ToUpper(adjResp[0]) + adjResp.Substring(1);
