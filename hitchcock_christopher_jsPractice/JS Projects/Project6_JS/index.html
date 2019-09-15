@@ -4,19 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>C# Methods Conversion</title>
+    <title>C# Logic Loops Conversion</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <article class="row text-center">
-        <section class="col-sm-12 my-3">
-            <h1>
-               Arrays details are all printed in the console.
-            </h1>
-        </section>
-    </article>
+    <section class="container">
+        <article class="row text-center">
+            <section class="col-sm-12 my-3">
+                <h1>
+                   Grade Calculator
+                </h1>
+            </section>
+        </article>
+        <div class="row my-3 gradeOneRow">
+            <section class="col-sm-6 text-right">
+                <h5>
+                    Enter Your First Grade: 
+                </h5>
+            </section>
+            <section class="col-sm-6 text-left">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="gradeOne" type="text" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="error">Please enter a valid number from 0-100</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row my-3 gradeTwoRow">
+            <section class="col-sm-6 text-right">
+                <h5>
+                    Enter Your Second Grade: 
+                </h5>
+            </section>
+            <section class="col-sm-6 text-left">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input class="gradeTwo" type="text" />
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="error">Please enter a valid number from 0-100</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row my-3 finalGrade d-none">
+            <hr class="w-100">
+            <section class="col-sm-6 text-right">
+                <h3>
+                   Final Grade: 
+                </h3>
+            </section>
+            <section class="col-sm-6 text-left">
+                <h3 class="finalGradeText"></h3>
+            </section>
+            <section class="col-sm-12">
+                <h3 class="finalText text-center"></h3>
+            </section>
+        </div>
+        <div class="row my-3  d-none">
+            <hr class="w-100">
+            <section class="col-sm-6 text-right">
+                <h3>
+                   Final Grade: 
+                </h3>
+            </section>
+            <section class="col-sm-6 text-left">
+                <h3 class="finalGradeText"></h3>
+            </section>
+        </div>
+    </section>
 
     <script src="assets/js/script.js"></script>
 </body>

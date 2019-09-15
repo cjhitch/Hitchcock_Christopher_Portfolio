@@ -1,44 +1,56 @@
 (function(){
 
-    // variables for the program
-    let firstArray = [34, 20, 91, 49];
-    let secondArray = [42, 120.30, 210.20, 32.50];
-    var sumArrayOne = 0;
-    var sumArrayTwo = 0;
-    let newCombinedArray = [];
-
-    // sum of arrays
-    firstArray.forEach(element => {
-        sumArrayOne += element;
-    });
-    // write out to the console
-    console.log("Sum of Array One: ",sumArrayOne,"\r\nArray One's Length: ", firstArray.length);
-
-    // sum of second array
-    secondArray.forEach(element =>{
-        sumArrayTwo += element;
-    });
-    // write to console
-    console.log("\nSum of Array Two: ", sumArrayTwo,"\r\nArray Two's Length: ", secondArray.length);
-
-    // get avg and print to console of both arrays
-    let arrayOneAvg = sumArrayOne / firstArray.length;
-    console.log("\nAverage of Array One: ", arrayOneAvg);
-
-    let arrayTwoAvg = sumArrayTwo / secondArray.length;
-    console.log("\nAverage of Array Two: ", arrayTwoAvg,"\n");
-
-    // combine arrays into one array
-    for (let i = 0; i < firstArray.length; i++) {
-        newCombinedArray[i] = firstArray[i] + secondArray[i];
-        console.log(`New Combined Array Value at Index ${i}: `,newCombinedArray[i]);
+    llc = {
+        selectors : {
+            gradeOne: document.querySelector('.gradeOne'),
+            gradeTwo: document.querySelector('.gradeTwo'),
+            gradeOneError: document.querySelector('.gradeOneRow p.error'),
+            gradeTwoError: document.querySelector('.gradeTwoRow p.error'),
+            finalGrade: document.querySelector('.finalGrade'),
+            finalGradeText: document.querySelector('.finalGrade h3.finalGradeText'),
+            finalText: document.querySelector('.finalText')
+        },
+        methods: {
+            listener : function() {
+                llc.selectors.gradeOne.addEventListener('input', function(){
+                    llc.methods.inputValidation(parseFloat(llc.selectors.gradeOne.value), llc.selectors.gradeOneError);
+                })
+                llc.selectors.gradeTwo.addEventListener('input', function(){
+                    llc.methods.inputValidation(parseFloat(llc.selectors.gradeTwo.value), llc.selectors.gradeTwoError);
+                })
+            },
+            inputValidation: function(val1, rowSelect) {
+                if(!Number.isInteger(val1) || val1 < 0 || val1 > 100){
+                    rowSelect.classList.remove('invis');
+                }
+                else {
+                    rowSelect.classList.add('invis');
+                }
+                llc.methods.gradeCalculate();
+            },
+            gradeCalculate : function() {
+                let grade1 = parseFloat(llc.selectors.gradeOne.value);
+                let grade2 = parseFloat(llc.selectors.gradeTwo.value);
+                if (llc.selectors.gradeOneError.classList.contains('invis') && llc.selectors.gradeTwoError.classList.contains('invis')){
+                    llc.selectors.finalGrade.classList.remove('d-none');
+                    let finalGrade = (grade1+grade2)/2;
+                    llc.selectors.finalGradeText.innerHTML = finalGrade;
+                    if (grade1 >= 70 && grade2 >= 70) {
+                        llc.selectors.finalText.innerHTML = `Congrats, both grades are passing!`
+                    }
+                    else {
+                        llc.selectors.finalText.innerHTML = `One or more grades are failing, try harder next time!`
+                    }
+                }
+                else {
+                    llc.selectors.finalGrade.classList.add('d-none');
+                }
+            }       
+        },
+        init : function() {
+            llc.methods.listener();
+        }
     }
-
-    // mixed up string array
-    let  mixedUp = ["universe is winning.", "erse trying to produce bigger an", "between software engineers striving to build bigger ", "d better idiots. So far, the ", "Programming today is a race ", "and better idiot-proof programs, and the univ"];
-
-    // fixed string array and print to console
-    let fixedSentence =  mixedUp[4] + mixedUp[2] + mixedUp[5] + mixedUp[1] + mixedUp[3] + mixedUp[0];
-    console.log("\n",fixedSentence);
+    llc.init();
 
 })();
