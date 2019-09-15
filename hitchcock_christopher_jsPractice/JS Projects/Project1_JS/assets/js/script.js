@@ -34,8 +34,10 @@
         console.log(`New Combined Array Value at Index ${i}: `,newCombinedArray[i]);
     }
 
+    // mixed up string array
     let  mixedUp = ["universe is winning.", "erse trying to produce bigger an", "between software engineers striving to build bigger ", "d better idiots. So far, the ", "Programming today is a race ", "and better idiot-proof programs, and the univ"];
 
+    // fixed string array and print to console
     let fixedSentence =  mixedUp[4] + mixedUp[2] + mixedUp[5] + mixedUp[1] + mixedUp[3] + mixedUp[0];
     console.log("\n",fixedSentence);
 
