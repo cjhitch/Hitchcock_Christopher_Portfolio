@@ -6,13 +6,23 @@
             this._name = name;
             this._cost = cost;
         }
+        Name() {
+
+        }
     }
     // child class for bulk items, extends base and adds in quantity or weight and total to calculate a total base on those two
     class BulkItem extends GroceryItem {
         constructor(name, cost, quantity) {
             super(name, cost);
             this._quantity = quantity;
-            this._total = groc.methods.calculateTotal(cost, this._quantity);
+            this._total = this.GetTotal(cost);
+        }
+        GetTotal(cost) {
+            let total = cost * this._quantity;
+            return total;
+        }
+        get Total() {
+            return this._total;
         }
     }
     // index to iterate through when a new item is built
@@ -29,6 +39,11 @@
         createArticle();
         // make new event listeners for each field
         inputEventListener();
+        // add event listener to the button
+        totalButtonListener();
+        // start event listener on function
+        addNewListener();
+        articleObserver();
         // increment the index for use in the next new field creation
         inputIndex++;
     }
@@ -197,9 +212,22 @@
 
     function totalButtonListener() {
         // get calculate total button
-        const button = document.querySelector('button.calculate-total')
-        // listener for click on calculate total button
-        button.addEventListener('click', function(){
+        const button = document.querySelector('button.calculate-total');
+        const div = document.querySelector('#item'+inputIndex+ ' div');
+        button.addEventListener('click', function(e){
+            e.preventDefault();
+            // listener for click on calculate total button
+            const input0 = div.childNodes[1].value;
+            const input1 = div.childNodes[4].value;
+            const input2 = div.childNodes[7].value;
+            if (input2 == '') {
+                console.log('I\'m here?');
+                const newGroc = new GroceryItem(input0, input1);
+            }
+            else {
+                const newBulk = new BulkItem(input0, input1, input2)
+                console.log(newBulk);
+            }
         });
     }
 
@@ -244,7 +272,6 @@
         nameListner(div, button);
         costListener(div, button);
         quantListener(div, button);
-        articleObserver();
     }
 
     function nameListner(div, button) {
@@ -321,8 +348,6 @@
     (function(){
         // initial creation should always have one field
         createNewField();
-        // start event listener on function
-        addNewListener();
     }())
     
 })();
