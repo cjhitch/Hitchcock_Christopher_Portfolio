@@ -83,7 +83,7 @@ namespace hitchcock_christopher_finalProject
                     case "view total":
                     {
                         // call view cart method
-                        ViewCart();
+                        CalculateTotal();
                         // break switch statement
                         break;
                     }
@@ -256,11 +256,29 @@ namespace hitchcock_christopher_finalProject
             // if cart has items
             else
             {
+                decimal subTotal = 0;
+                decimal tax = 0;
                 foreach (GroceryItem item in groceryCart)
                 {
-
+                    if (item is ITotal)
+                    {
+                        // subtotal if item uses interface
+                        subTotal += item.TotalCost;
+                    }
+                    else
+                    {
+                        // subtotal if item doesn't user interface
+                        subTotal += item.Cost;
+                    }
                 }
+                // get tax
+                tax = subTotal * .0825m;
+                decimal total = subTotal + tax;
+                Console.WriteLine($"Your subtotal is: {subTotal}" +
+                    $"\r\nYour tax is: {tax}" +
+                    $"\r\nYour total is: {total}");
             }
+        }
         // method displaying cart items
         void DisplayCart()
         {
