@@ -50,5 +50,26 @@ namespace hitchcock_christopher_finalProject
             }
             return output;
         }
+        public static int GetInt(string message, int min, int max)
+        {
+            Console.Write(message);
+            string input = Console.ReadLine();
+            int output = -1;
+            string minMax;
+            if (min == max)
+            {
+                minMax = $"(only one item, please select \"1\")\r\n";
+            }
+            else
+            {
+                minMax = $"(must be between {min} and {max})\r\n";
+            }
+            while (!((int.TryParse(input, out output)) && output >= min && output <= max ))
+            {
+                Console.Write($"You have entered an invalid value. "+minMax + message);
+                input = Console.ReadLine();
+            }
+            return output;
+        }
     }
 }
