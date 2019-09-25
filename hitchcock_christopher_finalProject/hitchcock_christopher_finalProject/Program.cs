@@ -87,6 +87,13 @@ namespace hitchcock_christopher_finalProject
                         // break switch statement
                         break;
                     }
+                    case "5":
+                    case "5.)":
+                    case "save shopping list":
+                    {
+                        SaveList();
+                        break;
+                    }
                     // case to exit program - customer can use 0 0.) or exit
                     case "0":
                     case "0.)":
@@ -256,23 +263,8 @@ namespace hitchcock_christopher_finalProject
             // if cart has items
             else
             {
-                decimal subTotal = 0;
-                decimal tax = 0;
-                foreach (GroceryItem item in groceryCart)
-                {
-                    if (item is ITotal)
-                    {
-                        // subtotal if item uses interface
-                        subTotal += item.TotalCost;
-                    }
-                    else
-                    {
-                        // subtotal if item doesn't user interface
-                        subTotal += item.Cost;
-                    }
-                }
-                // get tax
-                tax = subTotal * .0825m;
+                decimal subTotal = CalculateSubtotal();
+                decimal tax = CalculateTax(subTotal);
                 decimal total = subTotal + tax;
                 Console.WriteLine($"Your subtotal is: {subTotal}" +
                     $"\r\nYour tax is: {tax}" +
@@ -317,6 +309,68 @@ namespace hitchcock_christopher_finalProject
                 }
             }
             
+        }
+        // method for saving the file to output folder
+        void SaveList()
+        {
+            // using datetime to denote the order these were built in
+            string outputFolder = @"..\..\..\Output";
+            string filename = $"\\receipt-{DateTime.Now.ToString("MM-dd-yyy-HH-mm-ss")}.txt";
+            Directory.CreateDirectory(outputFolder);
+            string groceryList = null;
+
+            groceryList += $"-------- Shopping List ----------------------------------------------------------------------------------------------------------------------" +
+                $"\r\n" +
+                $"\r\n{DateTime.Now.ToString("MM/dd/yyyy H:mm")}" +
+                $"\r\n" +
+                $"\r\n";
+            foreach (GroceryItem cartItem in  groceryCart)
+	        {
+                groceryList += "\r\n---- Item ----------------------------------------------------------------------------------------------- Total -----------------------" +
+                    "\r\n     "+cartItem;
+	        }
+            decimal subTotal = CalculateSubtotal();
+            decimal tax = CalculateTax(subTotal);
+            decimal total = subTotal + tax;
+            groceryList += "\r\n\r\n---------------------------------------------------------------------------------------------------------------------------------------" +
+                "\r\n" +
+                                "|    **  Sub Total  **                                                                                                                |\r\n" +
+                                "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                                $"     |  {string.Format("{0:C}",subTotal)}                                                                                                                     \r\n" +
+                                "|    **  Tax    **                                                                                                                    |\r\n" +
+                                "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                                $"     |  {string.Format("{0:C}",tax)}                                                                                                                      \r\n" +
+                                "|    **  Total  **                                                                                                                    |\r\n" +
+                                "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                                $"     |  {string.Format("{0:C}",total)}                                                                                                                      ";
+
+            using (StreamWriter receipt = new StreamWriter(outputFolder+filename)) { 
+                receipt.Write(groceryList);
+            }
+        }
+        decimal CalculateSubtotal()
+        {
+            decimal subTotal = 0;
+            foreach (GroceryItem item in groceryCart)
+            {
+                if (item is ITotal)
+                {
+                    // subtotal if item uses interface
+                    subTotal += item.TotalCost;
+                }
+                else
+                {
+                    // subtotal if item doesn't user interface
+                    subTotal += item.Cost;
+                }
+            }
+            return subTotal;
+        }
+        decimal CalculateTax(decimal sub)
+        {
+            // get tax
+            decimal tax = sub * .0825m;
+            return tax;
         }
     }
 }

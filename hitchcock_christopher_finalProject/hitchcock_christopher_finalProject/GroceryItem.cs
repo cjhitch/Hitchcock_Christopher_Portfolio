@@ -29,7 +29,13 @@ namespace hitchcock_christopher_finalProject
 
         protected virtual void CalculateTotal()
         {
-            
+
+        }
+        public override string ToString()
+        {
+            string name = $"||  Item: {_name}";
+            string cost = $"||  Price: ${_cost}";
+            return string.Format("{0,-100}{1,-25:}", name, cost);
         }
     }
 }

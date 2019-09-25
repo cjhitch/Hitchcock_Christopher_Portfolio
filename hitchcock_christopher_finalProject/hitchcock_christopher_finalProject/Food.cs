@@ -26,5 +26,11 @@ namespace hitchcock_christopher_finalProject
         {
             _total = _weight * _singleItemCost;
         }
+        public override string ToString()
+        {
+            string name = $"||  Item: {base.Name}";
+            string cost = $"||  Price: ${_total}";
+            return string.Format("{0,-100}{1,-25:}", name, cost);
+        }
     }
 }
