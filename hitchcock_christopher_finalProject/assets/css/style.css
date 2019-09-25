@@ -1,0 +1,17 @@
+.error {
+    border-color: red;
+    background-color: rgba(255,0,0,.2);
+}
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin:0;
+    transition: all .25s linear;
+    overflow: hidden;
+    max-height: 18px;
+}
+.error-text.invisible {
+    transition: all .25s linear;
+    overflow: hidden;
+    max-height: 0;
+}

@@ -20,8 +20,9 @@
     // select the input area to append elements to
     let inputArea = document.querySelector('section.input-area');
     // arrays to be used for unique names in input and label creation
-    var labelNames = ['Item Name', 'Item Cost (only #\'s ex. 12.34)', 'Weight/Quantity (only #\'s ex. 2.45)'];
+    var labelNames = ['Item Name', 'Item Cost (only #\'s ex. 12.34)', 'Weight/Quantity (only #\'s ex. 2.45) This may be left blank'];
     var labelFor = ['name', 'cost', 'quant'];
+    var errorList = ['must be 2 characters or longer','must only be a number and at least 1 digit','must only be a number'];
     // const REGEXCOST = RegExp('^\d*\.?\d2$');
     // const REGEXNAME = RegExp('^(\d*+([a-zA-Z])*|([a-zA-Z])*+\d*)');
     // function to run the new field creation
@@ -57,10 +58,11 @@
         // loop through 3 times and create 3 labels, and 3 inputs
         for (let i = 0; i < labelNames.length; i++) {
             createLabel(div, i); 
-            createInput(div, i);           
+            createInput(div, i);
+            createError(div, i);          
         }
         // call the create total function
-        createTotal(div);
+        createTotalDiv(div);
     }
     // build label and append to the new div -- uses the i from the for loop to run through the arrays and give correct naming convention
     function createLabel(div, thisIndex){
@@ -75,6 +77,7 @@
         // append the label to the new div
         div.appendChild(lab);
     }
+
     // build input and append to the new div after the label - uses the i from the for loop to run through the arrays and give correct naming convention
     function createInput(div, thisIndex) {
         // create new input element
@@ -86,60 +89,153 @@
         // append to the div under the newly created label
         div.appendChild(input);
     }
+
+    // build errors for input fields
+    function createError(div, thisIndex) {
+        // create new error element
+        let error = document.createElement('p');
+        // set class attributes for the p tag
+        error.setAttribute('class', 'error-text invisible');
+        // set text for error field
+        error.textContent = errorList[thisIndex];
+        // append to the div under the newly created input
+        div.appendChild(error);
+    }
+
+    function createTotalDiv(div) {
+        // new section for a row
+        let section = document.createElement('section');
+        // add class row
+        section.setAttribute('class', 'row mt-3');
+        // new div for 5/12's
+        let leftDiv = document.createElement('div');
+        // set class for 5/12's
+        leftDiv.setAttribute('class', 'col-sm-5');
+        // new div for 7/12's
+        let rightDiv = document.createElement('div');
+        // set class for 7/12's
+        rightDiv.setAttribute('class', 'col-sm-7');
+        // append section to div
+        div.appendChild(section);
+        // append div to section
+        section.appendChild(leftDiv);
+        // append div to section
+        section.appendChild(rightDiv);
+        // get return value from createSubTotal
+        let subTotal = createSubTotal();
+        // get return value from createTax        
+        let tax = createTax();
+        // get return value from createTax        
+        let total = createTotal();
+        // append h6 sub to the div
+        leftDiv.appendChild(subTotal);
+        // append h6 tax to the div
+        leftDiv.appendChild(tax);
+        // append h5 to the div
+        leftDiv.appendChild(total);
+    }
+
+    function createSubTotal() {
+        // create new h6 subtotal element
+        let subTotal = document.createElement('h6');
+        // set class for subtotal
+        subTotal.setAttribute('class', 'text-left');
+        // text content for subtotal
+        subTotal.textContent = 'Subtotal: $'
+        return subTotal;
+    }
+
+    function createTax(div) {
+        // create new h6 tax element
+        let tax = document.createElement('h6');
+        // set class for tax
+        tax.setAttribute('class', 'text-left');
+        // text content for tax
+        tax.textContent = 'Tax: $';
+        return tax;
+    }
+
     function createTotal(div) {
-        // create new h5 element
+        // create new h5 total element
         let total = document.createElement('h5');
         // set class attributes for the h5
         total.setAttribute('class', 'mt-3 text-left h5-item');
         // set text content for h5
         total.textContent = 'Total: $';
-        // append h5 to the div
-        div.appendChild(total);
+        return total;
     }
     
     function buttonListener() {
         let button = document.querySelector('button');
         button.addEventListener('click', createNewField)
     }
-
+    // event listener function for all the inputs
     function inputEventListener() {
         let article = document.querySelector('#item'+inputIndex);
         // select the div inside this article
         let div = article.childNodes[0];
-        // should always be input name
+        // will always be input name
         let name = div.childNodes[1];
-        console.log(name);
-        // should always be input cost
-        let cost = div.childNodes[3];
-        console.log(cost)
-        // should always be input quant
-        let quant = div.childNodes[5];
-        console.log(quant)
+        // will always be input error
+        let nameError = div.childNodes[2];
+        // will always be input cost
+        let cost = div.childNodes[4];
+        // will always be input error
+        let costError = div.childNodes[5];
+        // will always be input quant
+        let quant = div.childNodes[7];
+        // will always be input error
+        let quantError = div.childNodes[8];
+        // add event listener to name input
+        // set button to change disabled state
+        let button = document.querySelector('button');
         name.addEventListener('input', function(){
-            let m;
+            // temp variable to get value of input field
             let temp = name.value;
-            while ((m = REGEXNAME.exec(temp)) !== null) {
-                // This is necessary to avoid infinite loops with zero-width matches
-                if (m.index === REGEXNAME.lastIndex) {
-                    REGEXNAME.lastIndex++;
-                }
-                
-                // The result can be accessed through the `m`-variable.
-                m.forEach((match, groupIndex) => {
-                    console.log(`Found match, group ${groupIndex}: ${match}`);
-                });
+            if (temp == '' || temp.length < 2) {
+                if (button.disabled == false) {
+                    button.setAttribute('disabled', 'true');
+                }                  
+                name.classList.add('error');
+                nameError.classList.remove('invisible');
             }
-            console.log(temp);
-            if (temp == REGEXNAME) {
-                alert('You suck!');
+            else {
+                name.classList.remove('error');
+                nameError.classList.add('invisible');
             }
         });
         cost.addEventListener('input', function(){
-
+            // temp variable to get value of input field
+            let temp = parseFloat(cost.value);
+            if (temp == '' || temp.length < 1 || isNaN(temp) ) {
+                if (button.disabled == false) {
+                    button.setAttribute('disabled', 'true');
+                }                
+                cost.classList.add('error');
+                costError.classList.remove('invisible');
+            }
+            else {
+                cost.classList.remove('error');
+                costError.classList.add('invisible');
+            }
         });
         quant.addEventListener('input', function(){
-
-        });
+            // temp variable to get value of input field
+            let temp = parseFloat(quant.value);
+            if (temp.length > 0) {
+                if(isNaN(temp)) {
+                    quant.classList.add('error');
+                    quantError.classList.remove('invisible');
+                    if (button.disabled == false) {
+                        button.setAttribute('disabled', 'true');
+                    }
+                }
+                else {
+                    quant.classList.remove('error');
+                    quantError.classList.add('invisible');
+                }
+            }
+        })
     }
 
     (function(){
