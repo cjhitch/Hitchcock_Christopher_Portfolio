@@ -222,20 +222,46 @@ namespace hitchcock_christopher_finalProject
         // method to remove item from cart
         void RemoveItem()
         {
-            int i = 0;
-            foreach (GroceryItem item in groceryCart)
+            // make sure the cart isn't empty
+            if (groceryCart.Count < 1)
             {
-                Console.WriteLine($"{i}.) {item.Name}");
-                i++;
+                Console.WriteLine("You need to add items first!");
             }
+            // if cart has items
+            else
+            {
+                int i = 1;
+                foreach (GroceryItem item in groceryCart)
+                {
+                    Console.WriteLine($"{i}.) {item.Name}");
+                    i++;
+                }
+                int removeAtIndex = Validation.GetInt("\r\nPlease select the item # you would like to remove from your cart: ", 1, groceryCart.Count);
+                Console.WriteLine($"Removed {groceryCart[removeAtIndex-1].Name} from cart.");
+                groceryCart.RemoveAt(removeAtIndex-1);
 
-            int removeAtIndex =
-                Validation.GetInt("\r\nPlease select the item # you would like to remove from your cart: ", 1,
-                    groceryCart.Count - 1);
+            }
             // wait for key response to return to main menu
             Utility.AnyKey("Press any key to return to menu. . .");
             Console.Clear();
         }
+        // method to calculate entire total
+        void CalculateTotal()
+        {
+            // make sure the cart isn't empty
+            if (groceryCart.Count < 1)
+            {
+                Console.WriteLine("You need to add items first!");
+            }
+            // if cart has items
+            else
+            {
+                foreach (GroceryItem item in groceryCart)
+                {
+
+                }
+            }
+        // method displaying cart items
         void DisplayCart()
         {
             Console.Clear();

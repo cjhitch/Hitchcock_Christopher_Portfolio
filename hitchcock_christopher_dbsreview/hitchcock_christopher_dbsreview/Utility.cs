@@ -56,7 +56,7 @@ namespace hitchcock_christopher_dbsreview
 
         private void BuildConnString()
         {
-            string connString = $"Server=localhost;";
+            string connString = $"Server=192.168.1.11;";
             connString += "uid=dbsAdmin;";
             connString += "pwd=password;";
             connString += "database=weather;";
