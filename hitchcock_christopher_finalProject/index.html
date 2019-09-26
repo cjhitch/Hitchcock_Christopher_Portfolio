@@ -19,9 +19,23 @@
             </header>
         </section>
         <section class="row">
-            <article class="col-sm-12 text-center my-3">
-                <h2>Add New Item</h2>
-                <button disabled="true" id="newItem">New Item</button>
+            <div class="col-sm-6 text-right">
+                <h2>
+                    Cart Total: $
+                </h2>
+            </div>
+            <div class="col-sm-6 cart-total text-left">
+                <h2></h2>
+            </div>
+        </section>
+        <section class="row">
+            <article class="col-sm-12 col-md-6 text-center my-3">
+                <h3 class="d-inline pr-5 mb-0">Add New Item</h3>
+                <button class="d-inline" disabled="true" id="newItem">New Item</button>
+            </article>
+            <article class="col-sm-12 col-md-6 text-center my-3">
+                <h3 class="d-inline pr-5 mb-0">Save Cart</h3>
+                <button class="d-inline" disabled="true" id="saveItems">Save</button>
             </article>
         </section>
         <section class="row input-area">
@@ -29,7 +43,7 @@
         <section class="row">
         </section>
     </section>
-
+    <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

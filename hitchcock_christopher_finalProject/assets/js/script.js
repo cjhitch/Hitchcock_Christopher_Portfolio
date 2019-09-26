@@ -1,16 +1,28 @@
+///// Bootstrap is throwing a console error -- this isn't from my file /////////
+
 (function(){
+
+    var groceryCart = [];
 
     // base class for grocery item - includes name and cost for single item
     class GroceryItem {
         constructor(name, cost) {
             this._name = name;
             this._cost = cost;
+            this._total = this.GetTotal(cost);
+        }
+        GetTotal(cost) {
+            let total = cost;
+            return total;
         }
         get Name() {
             return this._name;
         }
-        get Cost() {
-            return this._cost;
+        get Total() {
+            return this._total;
+        }
+        set Total(val){
+            this._total = val;
         }
     }
     // child class for bulk items, extends base and adds in quantity or weight and total to calculate a total base on those two
@@ -24,8 +36,14 @@
             let total = cost * this._quantity;
             return total;
         }
+        get Name() {
+            return this._name;
+        }
         get Total() {
             return this._total;
+        }
+        set Total(val){
+            this._total = val;
         }
     }
     // index to iterate through when a new item is built
@@ -38,18 +56,17 @@
     const errorList = ['must be 2 characters or longer','must only be a number and at least 1 digit','must only be a number'];
     // function to run the new field creation
     function createNewField() {
+        // get new item button
+        const button = document.querySelector('button#newItem');
+        button.setAttribute('disabled', 'true');
         // call article creation function
         createArticle();
         // make new event listeners for each field
         inputEventListener();
         // add event listener to the button
         totalButtonListener();
-        // start event listener on function
-        addNewListener();
         // add observer on the articles children
         articleObserver();
-        // increment the index for use in the next new field creation
-        inputIndex++;
     }
     // build and prepend the new article before the add new item button
     function createArticle(){
@@ -79,7 +96,7 @@
             createError(div, i);          
         }
         // create the total button
-        createTotalButton(div);
+        createTotAndEditButtons(div);
         // call the create total function
         createTotalDiv(div);
     }
@@ -125,23 +142,44 @@
         div.appendChild(error);
     }
 
-    function createTotalButton(div) {
+    function createTotAndEditButtons(div) {
         // new section for a row
         const section = document.createElement('section');
         // add class row
         section.setAttribute('class', 'row');
         // append section to the div
         div.appendChild(section);
+        // create div for total
+        const totalDiv = document.createElement('div');
+        // add class to totalDiv
+        totalDiv.setAttribute('class', 'col-md-6 col-sm-12')
+        // append div to section
+        section.appendChild(totalDiv);
+        // create edit button div
+        const editDiv = document.createElement('div');
+        // add class to edit div
+        editDiv.setAttribute('class', 'col-md-6 col-sm-12')
+        // append to section
+        section.appendChild(editDiv);
         // create button
-        const button = document.createElement('button');
-        // add class to button
-        button.setAttribute('class', 'calculate-total mx-auto mt-3');
-        // set initial state of button to be disabled
-        button.setAttribute('disabled', 'true');
+        const editButton = document.createElement('button');
+        editButton.setAttribute('class', 'edit-fields mx-auto mt-3');
+        // set initial stat of button to disabled
+        editButton.setAttribute('disabled', 'true');
         // set text content
-        button.textContent = 'Calculate Total';
+        editButton.textContent = 'Edit Item';
+        // I intend on continuing to build this with an edit button later
+        // editDiv.appendChild(editButton)
+        // create button
+        const totButton = document.createElement('button');
+        // add class to button
+        totButton.setAttribute('class', 'calculate-total mx-auto mt-3');
+        // set initial state of button to be disabled
+        totButton.setAttribute('disabled', 'true');
+        // set text content
+        totButton.textContent = 'Calculate Total';
         // append button to section
-        section.appendChild(button);
+        totalDiv.appendChild(totButton);
     }
 
     function createTotalDiv(div) {
@@ -152,7 +190,7 @@
         // new div for 5/12's
         const leftDiv = document.createElement('div');
         // set class for 5/12's
-        leftDiv.setAttribute('class', 'col-sm-5');
+        leftDiv.setAttribute('class', 'col-sm-5 pr-0');
         // new div for 7/12's
         const rightDiv = document.createElement('div');
         // set class for 7/12's
@@ -170,56 +208,127 @@
         // get return value from createTax        
         const total = createTotal();
         // append h6 sub to the div
-        leftDiv.appendChild(subTotal);
+        leftDiv.appendChild(subTotal[0]);
+        // append empty h6 to right div
+        rightDiv.appendChild(subTotal[1])
         // append h6 tax to the div
-        leftDiv.appendChild(tax);
+        leftDiv.appendChild(tax[0]);
+        // append empty h6 to right div
+        rightDiv.appendChild(tax[1]);
         // append h5 to the div
-        leftDiv.appendChild(total);
+        leftDiv.appendChild(total[0]);
+        // append empty h5 to the div
+        rightDiv.appendChild(total[1]);
     }
 
     function createSubTotal() {
         // create new h6 subtotal element
         const subTotal = document.createElement('h6');
+        // create empty h6 that will hold the value
+        const subTotalVal = document.createElement('h6');
         // set class for subtotal
-        subTotal.setAttribute('class', 'text-left');
+        subTotal.setAttribute('class', 'text-right');
+        // set class for subval
+        subTotalVal.setAttribute('class', 'text-left sub-value');
         // text content for subtotal
         subTotal.textContent = 'Subtotal: $'
         // return value to be captured
-        return subTotal;
+        return [subTotal, subTotalVal];
     }
 
-    function createTax(div) {
+    function createTax() {
         // create new h6 tax element
         const tax = document.createElement('h6');
+        // create empty h6 for tax value
+        const taxVal = document.createElement('h6');
         // set class for tax
-        tax.setAttribute('class', 'text-left');
+        tax.setAttribute('class', 'text-right');
+        // set class for tax val
+        taxVal.setAttribute('class', 'text-left tax-value')
         // text content for tax
         tax.textContent = 'Tax: $';
         // return value to be captured
-        return tax;
+        return [tax, taxVal];
     }
 
-    function createTotal(div) {
+    function createTotal() {
         // create new h5 total element
         const total = document.createElement('h5');
+        // create empty h5 for total value
+        const totalVal = document.createElement('h5');
         // set class attributes for the h5
-        total.setAttribute('class', 'mt-3 text-left h5-item');
+        total.setAttribute('class', 'mt-3 text-right');
+        // set class for total val
+        totalVal.setAttribute('class', 'mt-3 text-left total-value')
         // set text content for h5
         total.textContent = 'Total: $';
         // return value to be captured
-        return total;
+        return [total, totalVal];
+    }
+
+    function runTotals() {
+        // select the empty header tags to have text content added to them
+        const sub = document.querySelector('#item'+inputIndex+ ' .sub-value')
+        const tax = document.querySelector('#item'+inputIndex+ ' .tax-value')
+        const total = document.querySelector('#item'+inputIndex+ ' .total-value')
+        // set values and round to nearest hundreth
+        const subVal = Math.round(100*groceryCart[inputIndex].Total)/100;
+        const taxVal = Math.round(100*(subVal * .0825))/100;
+        const totalVal = Math.round(100*(subVal + taxVal))/100;
+        // reset the total of the object to now include tax
+        groceryCart[inputIndex].Total = totalVal;
+
+        sub.textContent = subVal;
+        tax.textContent = taxVal;
+        total.textContent = groceryCart[inputIndex].Total;
+
+        entireCartTotal();
+        
+    }
+
+    function entireCartTotal(){
+        let total = 0;
+        let hTotal = document.querySelector('div.cart-total h2');
+        groceryCart.forEach(element => {
+            total += element.Total;
+        });
+        hTotal.textContent = total;
     }
     
     function addNewListener() {
         // get new item button
         const button = document.querySelector('button#newItem');
         // call function to create a new item field once clicked
-        button.addEventListener('click', createNewField)
+        button.addEventListener('click', function(){            
+            // increment the index for use in the next new field creation
+            inputIndex++;
+            createNewField();
+        })
     }
+
+    function saveEventListener() {
+        const button = document.querySelector('button#saveItems');
+        button.addEventListener('click', function(){
+            groceryCart.forEach(element => {
+                localStorage.setItem(element.Name, JSON.stringify(element));
+            });
+        })
+    }
+
+    // I intend on building this portion out at a later date to continue the project for my wife
+    // function editButtonListener() {
+
+    // }
 
     function totalButtonListener() {
         // get calculate total button
         const button = document.querySelector('button.calculate-total');
+        // get edit item button -- I intend to continue building this out at a later date
+        // const editBtn = document.querySelector('button.edit-fields');
+        // new item button
+        const newBtn = document.querySelector('button#newItem');
+        // save button
+        const saveBtn = document.querySelector('button#saveItems');
         // div for childnodes
         const div = document.querySelector('#item'+inputIndex+ ' div');
         // event listener for the calculate total button
@@ -233,11 +342,31 @@
             if (input2 == '') {
                 // instantiate a new grocery item object
                 const newGroc = new GroceryItem(input0, input1);
+                // add to grocery cart
+                groceryCart.push(newGroc);
+                // remove the calculate button - this should only be changed now with the edit
+                button.parentNode.removeChild(button);
+                // enable the edit button -- I intend to continue building this out at a later date
+                // editBtn.removeAttribute('disabled');
+                // enable the add new item button
+                newBtn.removeAttribute('disabled');
+                saveBtn.removeAttribute('disabled');
+                runTotals();
             }
             // if weight/quantity has a value
             else {
                 // create a bulk product instead
-                const newBulk = new BulkItem(input0, input1, input2)
+                const newBulk = new BulkItem(input0, input1, input2);
+                // add to grocery cart
+                groceryCart.push(newBulk);
+                // remove the calculate button - this should only be changed now with the edit
+                button.parentNode.removeChild(button);
+                // enable the edit button -- I intend to continue building this out at a later date
+                // editBtn.removeAttribute('disabled');
+                // enable the add new item button
+                newBtn.removeAttribute('disabled');
+                saveBtn.removeAttribute('disabled');
+                runTotals();
             }
         });
     }
@@ -296,7 +425,7 @@
         quantListener(div, button);
     }
 
-    function nameListner(div, button) {
+    function nameListner(div) {
         // will always be input name
         const name = div.childNodes[1];
         // will always be input error
@@ -321,7 +450,7 @@
         });
     }
 
-    function costListener(div, button) {
+    function costListener(div) {
         // will always be input cost
         const cost = div.childNodes[4];
         // will always be input error
@@ -345,7 +474,7 @@
         });
     }
 
-    function quantListener(div, button) {
+    function quantListener(div) {
         // will always be input quant
         const quant = div.childNodes[7];
         // will always be input error
@@ -382,6 +511,10 @@
     (function(){
         // initial creation should always have one field
         createNewField();
+        // start event listener on function
+        addNewListener();
+        // start even listener for save
+        saveEventListener();
     }())
     
 })();
