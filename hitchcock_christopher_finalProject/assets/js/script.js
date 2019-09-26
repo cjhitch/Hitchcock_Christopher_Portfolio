@@ -51,7 +51,7 @@
     // select the input area to append elements to
     const inputArea = document.querySelector('section.input-area');
     // arrays to be used for unique names in input and label creation
-    const labelNames = ['Item Name', 'Item Cost (only #\'s ex. 12.34)', 'Weight/Quantity (only #\'s ex. 2.45) This may be left blank'];
+    const labelNames = ['Item Name', 'Item Cost (only #\'s ex. 12.34)', 'Weight/Quantity (only #\'s ex. 2.45)'];
     const labelFor = ['name', 'cost', 'quant'];
     const errorList = ['must be 2 characters or longer','must only be a number and at least 1 digit','must only be a number'];
     // function to run the new field creation
@@ -59,6 +59,8 @@
         // get new item button
         const button = document.querySelector('button#newItem');
         button.setAttribute('disabled', 'true');
+        button.classList.add('btn-outline-success');
+        button.classList.remove('btn-success');
         // call article creation function
         createArticle();
         // make new event listeners for each field
@@ -112,6 +114,12 @@
         lab.textContent = labelNames[thisIndex];
         // append the label to the new div
         div.appendChild(lab);
+        if (thisIndex == 2) {
+            const span = document.createElement('span');
+            span.setAttribute('class', 'span-red d-block');
+            span.textContent = ' This may be left empty'
+            lab.appendChild(span);
+        }
     }
 
     // build input and append to the new div after the label - uses the i from the for loop to run through the arrays and give correct naming convention
@@ -163,7 +171,7 @@
         section.appendChild(editDiv);
         // create button
         const editButton = document.createElement('button');
-        editButton.setAttribute('class', 'edit-fields mx-auto mt-3');
+        editButton.setAttribute('class', 'edit-fields mx-auto mt-3 btn btn-outline-secondary');
         // set initial stat of button to disabled
         editButton.setAttribute('disabled', 'true');
         // set text content
@@ -173,7 +181,7 @@
         // create button
         const totButton = document.createElement('button');
         // add class to button
-        totButton.setAttribute('class', 'calculate-total mx-auto mt-3');
+        totButton.setAttribute('class', 'calculate-total mx-auto mt-3 btn btn-outline-primary');
         // set initial state of button to be disabled
         totButton.setAttribute('disabled', 'true');
         // set text content
@@ -292,7 +300,7 @@
         groceryCart.forEach(element => {
             total += element.Total;
         });
-        hTotal.textContent = total;
+        hTotal.textContent = Math.round(100*total)/100;
     }
     
     function addNewListener() {
@@ -312,6 +320,7 @@
             groceryCart.forEach(element => {
                 localStorage.setItem(element.Name, JSON.stringify(element));
             });
+            alert('Grocery Cart Saved to Local Storage!');
         })
     }
 
@@ -350,7 +359,11 @@
                 // editBtn.removeAttribute('disabled');
                 // enable the add new item button
                 newBtn.removeAttribute('disabled');
+                newBtn.classList.remove('btn-outline-success')
+                newBtn.classList.add('btn-success')
                 saveBtn.removeAttribute('disabled');
+                saveBtn.classList.remove('btn-outline-info');
+                saveBtn.classList.add('btn-info');
                 runTotals();
             }
             // if weight/quantity has a value
@@ -365,7 +378,11 @@
                 // editBtn.removeAttribute('disabled');
                 // enable the add new item button
                 newBtn.removeAttribute('disabled');
+                newBtn.classList.remove('btn-outline-success')
+                newBtn.classList.add('btn-success')
                 saveBtn.removeAttribute('disabled');
+                saveBtn.classList.remove('btn-outline-info');
+                saveBtn.classList.add('btn-info');
                 runTotals();
             }
         });
@@ -394,11 +411,15 @@
                     if (observe0.classList.contains('success') && observe1.classList.contains('success') && observe2.classList.contains('success')) {
                         // remove disabled attribute from button
                         button.removeAttribute('disabled');
+                        button.classList.remove('btn-outline-primary');
+                        button.classList.add('btn-primary');
                     }
                     // if they don't all three have success
                     else {
                         // ensure the button's attribute is still disabled or set to disabled
                         button.setAttribute('disabled', 'true');
+                        button.classList.add('btn-outline-primary');
+                        button.classList.remove('btn-primary');
                     }
                 }
             }

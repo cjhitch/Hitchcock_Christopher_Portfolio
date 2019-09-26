@@ -15,3 +15,7 @@
     overflow: hidden;
     max-height: 0;
 }
+.span-red {
+    color: blue;
+    font-size: 14px;
+}

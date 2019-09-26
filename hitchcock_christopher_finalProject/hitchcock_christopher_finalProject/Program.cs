@@ -344,7 +344,7 @@ namespace hitchcock_christopher_finalProject
             {
                 // using datetime to denote the order these were built in
                 string outputFolder = @"..\..\..\Output";
-                string filename = $"\\receipt-{DateTime.Now.ToString("MM-dd-yyy-HH-mm-ss")}.txt";
+                string filename = $"\\grocery-list-{DateTime.Now.ToString("MM-dd-yyy-HH-mm-ss")}.txt";
                 Directory.CreateDirectory(outputFolder);
                 string groceryList = null;
 
