@@ -6,8 +6,11 @@
             this._name = name;
             this._cost = cost;
         }
-        Name() {
-
+        get Name() {
+            return this._name;
+        }
+        get Cost() {
+            return this._cost;
         }
     }
     // child class for bulk items, extends base and adds in quantity or weight and total to calculate a total base on those two
@@ -43,6 +46,7 @@
         totalButtonListener();
         // start event listener on function
         addNewListener();
+        // add observer on the articles children
         articleObserver();
         // increment the index for use in the next new field creation
         inputIndex++;
@@ -180,6 +184,7 @@
         subTotal.setAttribute('class', 'text-left');
         // text content for subtotal
         subTotal.textContent = 'Subtotal: $'
+        // return value to be captured
         return subTotal;
     }
 
@@ -190,6 +195,7 @@
         tax.setAttribute('class', 'text-left');
         // text content for tax
         tax.textContent = 'Tax: $';
+        // return value to be captured
         return tax;
     }
 
@@ -200,6 +206,7 @@
         total.setAttribute('class', 'mt-3 text-left h5-item');
         // set text content for h5
         total.textContent = 'Total: $';
+        // return value to be captured
         return total;
     }
     
@@ -213,47 +220,62 @@
     function totalButtonListener() {
         // get calculate total button
         const button = document.querySelector('button.calculate-total');
+        // div for childnodes
         const div = document.querySelector('#item'+inputIndex+ ' div');
+        // event listener for the calculate total button
         button.addEventListener('click', function(e){
             e.preventDefault();
-            // listener for click on calculate total button
-            const input0 = div.childNodes[1].value;
-            const input1 = div.childNodes[4].value;
-            const input2 = div.childNodes[7].value;
+            // declare each input value - needs to be inside the listener for when these change
+            let input0 = div.childNodes[1].value;
+            let input1 = div.childNodes[4].value;
+            let input2 = div.childNodes[7].value;
+            // check if the input value for weight/quantity is an empty string
             if (input2 == '') {
-                console.log('I\'m here?');
+                // instantiate a new grocery item object
                 const newGroc = new GroceryItem(input0, input1);
             }
+            // if weight/quantity has a value
             else {
+                // create a bulk product instead
                 const newBulk = new BulkItem(input0, input1, input2)
-                console.log(newBulk);
             }
         });
     }
 
+    // observer function on the article to watch for success class addition on the input fields
     function articleObserver() {
+        // select div with inputs in it
         const div = document.querySelector('#item'+inputIndex+ ' div');
+        // select all three child nodes
         const observe0 = div.childNodes[1];
         const observe1 = div.childNodes[4];
         const observe2 = div.childNodes[7];
+        // button for calculate total selector
         const button = document.querySelector('button.calculate-total')
 
+        // config observer to watch the attributes
         const config = {attributes : true}
 
+        // set up of the observer
         const callback = function(mutationList, observer) {
             for (let mutation of mutationList) {
+                // if the observer observes the attributes changing
                 if (mutation.type == 'attributes') {
+                    // if all three input fields contain 'success'
                     if (observe0.classList.contains('success') && observe1.classList.contains('success') && observe2.classList.contains('success')) {
                         // remove disabled attribute from button
                         button.removeAttribute('disabled');
                     }
+                    // if they don't all three have success
                     else {
+                        // ensure the button's attribute is still disabled or set to disabled
                         button.setAttribute('disabled', 'true');
                     }
                 }
             }
         }
 
+        // new mutation observer to watch all three input fields
         const observer = new MutationObserver(callback);
         observer.observe(observe0, config);
         observer.observe(observe1, config);
@@ -268,7 +290,7 @@
         const article = document.querySelector('#item'+inputIndex);
         // select the div inside this article
         const div = article.childNodes[0];
-        // get true or false values for event listeners
+        // call all three listeners from this function
         nameListner(div, button);
         costListener(div, button);
         quantListener(div, button);
@@ -283,12 +305,15 @@
         name.addEventListener('input', function(){
             // temp variable to get value of input field
             const temp = name.value;
-            if (temp == '' || temp.length < 2) {                
+            // check if the string is empty or less than 2 characters
+            if (temp == '' || temp.length < 2) {
+                // if it is, add and remove these classes
                 name.classList.add('error');
                 nameError.classList.remove('invisible');
                 name.classList.remove('success');
             }
             else {
+                // if it isn't remove and add these classes instead
                 name.classList.remove('error');
                 nameError.classList.add('invisible');
                 name.classList.add('success');
@@ -304,12 +329,15 @@
         cost.addEventListener('input', function(){
             // temp variable to get value of input field
             const temp = parseFloat(cost.value);
+            // check if the string is empty or the user hasn't entered a number
             if (temp == '' || temp.length < 1 || isNaN(temp) ) {
+                // if it is, add and remove these classes
                 cost.classList.add('error');
                 costError.classList.remove('invisible');
                 cost.classList.remove('success');
             }
             else {
+                // if it isn't remove and add these classes instead
                 cost.classList.remove('error');
                 costError.classList.add('invisible');
                 cost.classList.add('success');
@@ -325,18 +353,24 @@
         quant.addEventListener('input', function(){
             // temp variable to get value of input field
             const temp = parseFloat(quant.value);
+            // if it is, add and remove these classes
             if (quant.value == '') {
+                // if it was
                 quant.classList.remove('error');
                 quantError.classList.add('invisible');
                 quant.classList.add('success');
             }
+            // if it isn't blank
             else if (temp != '') {
+                // check if they input a number
                 if(isNaN(temp)) {
+                    // if it is, add and remove these classes
                     quant.classList.add('error');
                     quantError.classList.remove('invisible');
                     quant.classList.remove('success');
                 }
                 else {
+                    // if it isn't remove and add these classes instead
                     quant.classList.remove('error');
                     quantError.classList.add('invisible');
                     quant.classList.add('success');
