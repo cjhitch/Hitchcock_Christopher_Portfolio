@@ -1,3 +1,5 @@
+using System;
+
 namespace hitchcock_christopher_finalProject
 {
     // inherits from GroceryItem and implements ITotal interface
@@ -25,6 +27,7 @@ namespace hitchcock_christopher_finalProject
         protected override void CalculateTotal()
         {
             _total = _weight * _singleItemCost;
+            _total = Math.Round(_total, 2);
         }
         public override string ToString()
         {

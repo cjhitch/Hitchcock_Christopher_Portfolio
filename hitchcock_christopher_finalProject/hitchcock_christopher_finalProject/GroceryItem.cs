@@ -29,7 +29,7 @@ namespace hitchcock_christopher_finalProject
 
         protected virtual void CalculateTotal()
         {
-
+            
         }
         public override string ToString()
         {

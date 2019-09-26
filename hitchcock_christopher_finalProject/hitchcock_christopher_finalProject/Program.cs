@@ -33,19 +33,11 @@ namespace hitchcock_christopher_finalProject
             // run menu unless user selects exit to leave program
             while (_runMenu)
             {
+                string input;
+                string switchStatement = Validation.GetString(
+                    $"{Utility.ColorCyan("------------------------------------\r\n--------------- Menu ---------------\r\n------------------------------------\r\n")}{Utility.ColorBlue("\r\n1.) Add Item\r\n2.) View Cart\r\n3.) Remove Item\r\n4.) View Total\r\n5.) Save Shopping List\r\n0.) Exit\r\n")}{Utility.ColorCyan("\r\nMake a selection: ")}",input = Console.ReadLine());
                 // use switch statement for menu and use validation prompt to make sure user didn't leave blank
-                switch (Validation.GetString("------------------------------------\r\n" +
-                                            "--------------- Menu ---------------\r\n" +
-                                            "------------------------------------\r\n" +
-                                            "\r\n" +
-                                            "1.) Add Item" +
-                                            "\r\n2.) View Cart" +
-                                            "\r\n3.) Remove Item" +
-                                            "\r\n4.) View Total" +
-                                            "\r\n5.) Save Shopping List" +
-                                            "\r\n0.) Exit" +
-                                            "\r\n" +
-                                            "\r\nMake a selection: ").ToLower())
+                switch (switchStatement)
                 {
                     // case for add item - customer can use 1, 1.) or add item
                     case "1":
@@ -131,12 +123,14 @@ namespace hitchcock_christopher_finalProject
             {
                 // check if they need weigh or quantity
                 Console.Clear();
-                switch (Validation.GetString($"Are you buying {tempItem} as single, bulk, or per pound?\r\n" +
-                                             "\r\n1.) Single Item\r\n" +
-                                             "2.) Bulk Items\r\n" +
-                                             "3.) Per Pound\r\n" +
-                                             "\r\n" +
-                                             "Make a selection: ").ToLower())
+                // new input to capture response
+                string input;
+                // build switch statement with colors
+                string switchStatement = Validation.GetString(
+                        $"{Utility.ColorCyan($"Are you buying {tempItem} as single, bulk, or per pound?\r\n")}" +
+                        $"{Utility.ColorGrey($"\r\n1.) Single Item\r\n2.) Bulk Items\r\n3.) Per Pound\r\n\r\n")}" +
+                        $"{Utility.ColorCyan("Make a selection: ")}".ToLower(), input = Console.ReadLine());
+                switch (switchStatement)
                 {
                     // case for single item
                     case "1":
@@ -187,7 +181,7 @@ namespace hitchcock_christopher_finalProject
                         Console.WriteLine("You have entered an invalid response. ");
                         Console.ResetColor();
                         // wait for key response to return to quantity menu
-                        Utility.AnyKey("\r\nPress any key to return to quantity menu. . .");
+                        Utility.AnyKey("\r\nPress any key to return to add item menu. . .");
                         break;
                     }
                 }
@@ -207,7 +201,6 @@ namespace hitchcock_christopher_finalProject
             }
             // wait for key response to return to main menu
             Utility.AnyKey("Press any key to return to menu. . .");
-            Console.Clear();
         }
         // method to view all contents of the cart
         void ViewCart()
@@ -222,9 +215,7 @@ namespace hitchcock_christopher_finalProject
             {
                 DisplayCart();
             }
-            // wait for key response to return to main menu
-            Utility.AnyKey("\r\nPress any key to return to menu. . .");
-            Console.Clear();
+            Utility.AnyKey("Press any key to return to menu. . .");
         }
         // method to remove item from cart
         void RemoveItem()
@@ -244,13 +235,12 @@ namespace hitchcock_christopher_finalProject
                     i++;
                 }
                 int removeAtIndex = Validation.GetInt("\r\nPlease select the item # you would like to remove from your cart: ", 1, groceryCart.Count);
-                Console.WriteLine($"Removed {groceryCart[removeAtIndex-1].Name} from cart.");
+                Utility.ColorRed($"Removed {groceryCart[removeAtIndex-1].Name} from cart.");
                 groceryCart.RemoveAt(removeAtIndex-1);
 
             }
             // wait for key response to return to main menu
             Utility.AnyKey("Press any key to return to menu. . .");
-            Console.Clear();
         }
         // method to calculate entire total
         void CalculateTotal()
@@ -263,90 +253,141 @@ namespace hitchcock_christopher_finalProject
             // if cart has items
             else
             {
+                // use method to get subtotal
                 decimal subTotal = CalculateSubtotal();
+                // round the value to the nearest hundreth
+                subTotal = Math.Round(subTotal, 2);
+                // use method to calculate tax
                 decimal tax = CalculateTax(subTotal);
+                // round the value to the nearest hundreth
+                tax = Math.Round(tax, 2);
+                // add sub and tax to get total
                 decimal total = subTotal + tax;
-                Console.WriteLine($"Your subtotal is: {subTotal}" +
-                    $"\r\nYour tax is: {tax}" +
-                    $"\r\nYour total is: {total}");
+                Console.WriteLine($"\r\n\r\n------------------------------------------------------------- Grocery Cart ------------------------------------------------------------" +
+                "\r\n" +
+                    "|    **  Sub Total  **                                                                                                                |\r\n" +
+                    "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                    $"     |  {string.Format("{0:C}",subTotal)}                                                                                                                     \r\n" +
+                    "|    **  Tax    **                                                                                                                    |\r\n" +
+                    "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                    $"     |  {string.Format("{0:C}",tax)}                                                                                                                      \r\n" +
+                    "|    **  Total  **                                                                                                                    |\r\n" +
+                    "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                    $"     |  {string.Format("{0:C}",total)}                                                                                                                      ");
             }
+            // wait for key response to return to main menu
+            Utility.AnyKey("Press any key to return to menu. . .");
         }
         // method displaying cart items
         void DisplayCart()
         {
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("------------------------------------\r\n" +
                               "--------------- Cart ---------------\r\n" +
-                              "------------------------------------");
+                              "------------------------------------\r\n" +
+                              "\r\n" +
+                              "| ---------- Item ---------- | | ----- Cost ----- | | -- Quantity -- | | ----- Total ----- |");
+            Console.ResetColor();
+            string name;
+            string cost;
+            string quantity;
+            string total;
             // iterate through each item in the cart
             foreach (GroceryItem item in groceryCart)
             {
+                name = "| "+item.Name;
+                cost = null;
+                quantity = null;
+                total = "  | $"+item.Cost.ToString();
                 Console.Write("\r\n");
                 // display name of item
-                Console.Write("Item: "+item.Name);
+//                Console.Write("Item: "+item.Name);
                 // check if item is implementing ITotal
                 if (item is ITotal)
                 {
                     // check if item is food
                     if (item is Food)
                     {
+                        quantity = " | "+item.Quantity.ToString()+"lbs.";
                         // display item weight
-                        Console.Write(" Item Weight: "+item.Quantity);
+//                        Console.Write(" Item Weight: "+item.Quantity);
                     }
                     // if not food, it is bulk item
                     else
                     {
+                        quantity = " | "+item.Quantity.ToString();
                         // display item quantity
-                        Console.Write(" Item Quantity: "+item.Quantity);
+//                        Console.Write(" Item Quantity: "+item.Quantity);
                     }
+                    
                     // display single item and total
-                    Console.Write(" Single Item Cost: " + item.Cost + " Total: " + item.TotalCost);
+//                    Console.Write(" Single Item Cost: " + item.Cost + " Total: " + item.TotalCost);
+                    cost = " | $" + item.Cost.ToString();
+                    total = "  | $" + item.TotalCost.ToString();
                 }
-                else
-                {
-                    // display item total
-                    Console.Write(" Total: "+item.Cost);
-                }
+                string fullItem = string.Format("{0,-30}{1,-21}{2,-18}{3,-21}", name, cost, quantity, total);
+                Console.WriteLine("| -------------------------- | | ---------------- | | -------------- | | ----------------- |");
+                Console.WriteLine(fullItem);
             }
             
         }
         // method for saving the file to output folder
         void SaveList()
         {
-            // using datetime to denote the order these were built in
-            string outputFolder = @"..\..\..\Output";
-            string filename = $"\\receipt-{DateTime.Now.ToString("MM-dd-yyy-HH-mm-ss")}.txt";
-            Directory.CreateDirectory(outputFolder);
-            string groceryList = null;
-
-            groceryList += $"-------- Shopping List ----------------------------------------------------------------------------------------------------------------------" +
-                $"\r\n" +
-                $"\r\n{DateTime.Now.ToString("MM/dd/yyyy H:mm")}" +
-                $"\r\n" +
-                $"\r\n";
-            foreach (GroceryItem cartItem in  groceryCart)
-	        {
-                groceryList += "\r\n---- Item ----------------------------------------------------------------------------------------------- Total -----------------------" +
-                    "\r\n     "+cartItem;
-	        }
-            decimal subTotal = CalculateSubtotal();
-            decimal tax = CalculateTax(subTotal);
-            decimal total = subTotal + tax;
-            groceryList += "\r\n\r\n---------------------------------------------------------------------------------------------------------------------------------------" +
-                "\r\n" +
-                                "|    **  Sub Total  **                                                                                                                |\r\n" +
-                                "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
-                                $"     |  {string.Format("{0:C}",subTotal)}                                                                                                                     \r\n" +
-                                "|    **  Tax    **                                                                                                                    |\r\n" +
-                                "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
-                                $"     |  {string.Format("{0:C}",tax)}                                                                                                                      \r\n" +
-                                "|    **  Total  **                                                                                                                    |\r\n" +
-                                "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
-                                $"     |  {string.Format("{0:C}",total)}                                                                                                                      ";
-
-            using (StreamWriter receipt = new StreamWriter(outputFolder+filename)) { 
-                receipt.Write(groceryList);
+            // make sure the cart isn't empty
+            if (groceryCart.Count < 1)
+            {
+                Console.WriteLine("You need to add items first!");
             }
+            else
+            {
+                // using datetime to denote the order these were built in
+                string outputFolder = @"..\..\..\Output";
+                string filename = $"\\receipt-{DateTime.Now.ToString("MM-dd-yyy-HH-mm-ss")}.txt";
+                Directory.CreateDirectory(outputFolder);
+                string groceryList = null;
+
+                groceryList +=
+                    $"-------- Shopping List     ----------------------------------------------------------------------------------------------------------------------" +
+                    $"\r\n" +
+                    $"\r\n{DateTime.Now.ToString("MM/dd/yyyy H:mm")}" +
+                    $"\r\n" +
+                    $"\r\n";
+                foreach (GroceryItem cartItem in groceryCart)
+                {
+                    groceryList +=
+                        "\r\n---- Item ----------------------------------------------------------------------------------------------- Total -----------------------" +
+                        "\r\n     " + cartItem;
+                }
+
+                decimal subTotal = CalculateSubtotal();
+                subTotal = Math.Round(subTotal, 2);
+                decimal tax = CalculateTax(subTotal);
+                tax = Math.Round(tax, 2);
+                decimal total = subTotal + tax;
+                groceryList +=
+                    "\r\n\r\n---------------------------------------------------------------------------------------------------------------------------------------" +
+                    "\r\n" +
+                    "|    **  Sub Total  **                                                                                                                |\r\n" +
+                    "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                    $"     |  {string.Format("{0:C}", subTotal)}                                                                                                                     \r\n" +
+                    "|    **  Tax    **                                                                                                                    |\r\n" +
+                    "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                    $"     |  {string.Format("{0:C}", tax)}                                                                                                                      \r\n" +
+                    "|    **  Total  **                                                                                                                    |\r\n" +
+                    "-----|             |-------------------------------------------------------------------------------------------------------------------\r\n" +
+                    $"     |  {string.Format("{0:C}", total)}                                                                                                                      ";
+
+                using (StreamWriter receipt = new StreamWriter(outputFolder + filename))
+                {
+                    receipt.Write(groceryList);
+                }
+
+                Console.WriteLine("Your Grocery List has been saved! Thank you for using our program.");
+            }
+
+            Utility.AnyKey("Press any key to return to the main menu. . .");
         }
         decimal CalculateSubtotal()
         {

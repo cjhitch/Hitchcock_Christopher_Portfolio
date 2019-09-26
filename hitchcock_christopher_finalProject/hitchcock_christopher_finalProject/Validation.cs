@@ -19,6 +19,20 @@ namespace hitchcock_christopher_finalProject
             }
             return input;
         }
+        public static string GetString(string message, string input)
+        {
+            while (string.IsNullOrWhiteSpace(input))
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("This cannot be blank!\r\n");
+                Console.ResetColor();
+                Console.Write(message);
+                input = Console.ReadLine();
+            }
+            return input;
+            
+        }
         // validate for a yes or no response
         public static string GetString(string message, bool yesNo)
         {
@@ -40,7 +54,7 @@ namespace hitchcock_christopher_finalProject
             Console.Write(message);
             string input = Console.ReadLine();
             decimal output = -1;
-            while (!((decimal.TryParse(input, out output)) && output >= min))
+            while (!((decimal.TryParse(input, out output)) && output > min))
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write($"You have entered an invalid value, must be a number and greater than 0.\r\n");
