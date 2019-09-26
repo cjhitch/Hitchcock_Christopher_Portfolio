@@ -9,6 +9,30 @@
 	],
 "creatorBuild": "31491",
 "files": {
+	"/hitchcock_christopher_dbsreview/.vs/hitchcock_christopher_dbsreview/v16/.suo": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_dbsreview/.vs/hitchcock_christopher_dbsreview/v16/.suo",
+		"oF": 0
+		},
+	"/hitchcock_christopher_dbsreview/.vs/hitchcock_christopher_dbsreview/v16/Server/sqlite3/db.lock": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_dbsreview/.vs/hitchcock_christopher_dbsreview/v16/Server/sqlite3/db.lock",
+		"oF": 0
+		},
+	"/hitchcock_christopher_dbsreview/.vs/hitchcock_christopher_dbsreview/v16/Server/sqlite3/storage.ide": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_dbsreview/.vs/hitchcock_christopher_dbsreview/v16/Server/sqlite3/storage.ide",
+		"oF": 0
+		},
 	"/hitchcock_christopher_dbsreview/hitchcock_christopher_dbsreview.sln": {
 		"cB": 0,
 		"ft": 8192,
@@ -554,6 +578,261 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/hitchcock_christopher_debug/index.html",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/.suo": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/.suo",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/db.lock": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/db.lock",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/storage.ide": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/storage.ide",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/storage.ide-shm": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/storage.ide-shm",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/storage.ide-wal": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/.vs/hitchcock_christopher_finalProject/v16/Server/sqlite3/storage.ide-wal",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/assets/css/bootstrap.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/assets/css/bootstrap.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/hitchcock_christopher_finalProject/assets/css/style-min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/assets/css/style-min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/hitchcock_christopher_finalProject/assets/css/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/assets/css/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/hitchcock_christopher_finalProject/assets/js/bootstrap.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/assets/js/bootstrap.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/hitchcock_christopher_finalProject/assets/js/script-min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/assets/js/script-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/hitchcock_christopher_finalProject/assets/js/script.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/assets/js/script-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject.sln": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject.sln",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/bin/Debug/hitchcock_christopher_finalProject.exe": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/bin/Debug/hitchcock_christopher_finalProject.exe",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/bin/Debug/hitchcock_christopher_finalProject.pdb": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/bin/Debug/hitchcock_christopher_finalProject.pdb",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/BulkItem.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/BulkItem.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Food.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Food.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/GroceryItem.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/GroceryItem.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject.csproj": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject.csproj",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/ITotal.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/ITotal.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.csproj.CoreCompileInputs.cache": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.csproj.CoreCompileInputs.cache",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.csproj.FileListAbsolute.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.csproj.FileListAbsolute.txt",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.csprojAssemblyReference.cache": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.csprojAssemblyReference.cache",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.exe": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.exe",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.pdb": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/obj/Debug/hitchcock_christopher_finalProject.pdb",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Program.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Program.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Properties/AssemblyInfo.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Properties/AssemblyInfo.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Utility.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Utility.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Validation.cs": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/hitchcock_christopher_finalProject/Validation.cs",
+		"oF": 0
+		},
+	"/hitchcock_christopher_finalProject/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_finalProject/index.html",
+		"oF": 0
+		},
+	"/hitchcock_christopher_json.zip": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/hitchcock_christopher_json.zip",
 		"oF": 0
 		},
 	"/hitchcock_christopher_json/github_link.txt": {
