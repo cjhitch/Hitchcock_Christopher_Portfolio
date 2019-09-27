@@ -38,7 +38,7 @@ namespace hitchcock_christopher_finalProject
         {
             Console.Write(message);
             string input = Console.ReadLine().ToLower();
-            while (string.IsNullOrWhiteSpace(input) && (input != "y" || input != "n"))
+            while (!(input == "y" || input == "n"))
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;

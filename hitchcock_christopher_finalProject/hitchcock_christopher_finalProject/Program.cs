@@ -185,8 +185,10 @@ namespace hitchcock_christopher_finalProject
                         break;
                     }
                 }
+
+                string anotherItem = Validation.GetString("\r\nWould you like to add another item to cart? (Y or N) ", true);
                 // check if user would like to add another item or not
-                if (Validation.GetString("\r\nWould you like to add another item to cart? (Y or N) ", true) != "y")
+                if (anotherItem != "y")
                 {
                     // if they don't want to add a new item, break the while loop
                     tempTrue = false;
